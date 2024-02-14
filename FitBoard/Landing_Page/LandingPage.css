@@ -10,7 +10,7 @@ html, body {
 
 section{
 	display: block;
-	background-image: linear-gradient(rgba(73, 72, 72, 0.911), rgba(0, 0, 0, 0.788)), url("Gym4.png");
+	background-image: linear-gradient(rgba(73, 72, 72, 0.911), rgba(0, 0, 0, 0.788)), url("Gym.png");
 	background-size: COVER;
 	background-repeat: no-repeat;
 	height:100%;
