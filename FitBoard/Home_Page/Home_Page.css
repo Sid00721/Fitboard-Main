@@ -80,3 +80,12 @@ nav .icon-burger .line {
 	border-radius: 3px;
 	transition: all .3s ease-in-out;
 }
+
+section {
+    position: relative;
+    top: 70%;
+    left: 40%;
+	font-family: 'Montserrat', sans-serif;
+}
+
+
