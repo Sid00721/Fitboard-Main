@@ -58,56 +58,67 @@
                 </li>
                 <li>
                     <a href="#">
-                        <i class="bx bxs-grid-alt"></i>
-                        <span class="Nav_Item">Dashboard</span>
+                        <i class="bx bxs-user-circle"></i>
+                        <span class="Nav_Item">Profile</span>
                     </a>
-                    <span class="tooltip">Dashboard</span>
+                    <span class="tooltip">Profile</span>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="bx bxs-grid-alt"></i>
-                        <span class="Nav_Item">Dashboard</span>
+                        <i class="bx bxs-duplicate"></i>
+                        <span class="Nav_Item">Create Program</span>
                     </a>
-                    <span class="tooltip">Dashboard</span>
+                    <span class="tooltip">Create Program</span>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="bx bxs-grid-alt"></i>
-                        <span class="Nav_Item">Dashboard</span>
+                        <i class="bx bxs-bell-ring"></i>
+                        <span class="Nav_Item">Notifications</span>
                     </a>
-                    <span class="tooltip">Dashboard</span>
+                    <span class="tooltip">Notifications</span>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="bx bxs-grid-alt"></i>
-                        <span class="Nav_Item">Dashboard</span>
+                        <i class="bx bxs-cog"></i>
+                        <span class="Nav_Item">Settings</span>
                     </a>
-                    <span class="tooltip">Dashboard</span>
+                    <span class="tooltip">Settings</span>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="bx bxs-grid-alt"></i>
-                        <span class="Nav_Item">Dashboard</span>
+                        <i class="bx bxs-help-circle"></i>
+                        <span class="Nav_Item">Help</span>
                     </a>
-                    <span class="tooltip">Dashboard</span>
+                    <span class="tooltip">Help</span>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="bx bxs-grid-alt"></i>
-                        <span class="Nav_Item">Dashboard</span>
+                        <i class="bx bxs-video"></i>
+                        <span class="Nav_Item">Video Tutorials</span>
                     </a>
-                    <span class="tooltip">Dashboard</span>
+                    <span class="tooltip">Video Tutorials</span>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="bx bxs-grid-alt"></i>
-                        <span class="Nav_Item">Dashboard</span>
+                        <i class="bx bxs-log-out"></i>
+                        <span class="Nav_Item">Logout</span>
                     </a>
-                    <span class="tooltip">Dashboard</span>
+                    <span class="tooltip">Logout</span>
                 </li>
             </ul>
         </div>
 
         
     </body>
+
+    <script>
+        let btn = document.querySelector('#btn')
+        let sidebar = document.querySelector('.sidebar')
+
+        btn.onclick = function () {
+            sidebar.classList.toggle('active');
+        };
+        
+    </script>
+
 </html>
