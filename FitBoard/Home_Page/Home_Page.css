@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
  /*Sets page format*/
 * {			
 	margin: 0;
@@ -8,7 +7,6 @@
 	font-family: 'Montserrat', sans-serif;
 	scroll-behavior: smooth;
 }	
-
 .User_Image {					/*css for profile picture*/
 	width: 50px;
 	height: 50px;
@@ -25,12 +23,10 @@
 	background-color: #202229;
 	transition: all 0.5s ease;
 	padding: 0.4rem 0.8rem;									/*rem refers to the font-size of the root element. So padding: 0.2rem on the p tag will be interpreted as 0.2 times 18px which is 3.6px.*/
-	overflow-x: hidden;
 }
 
 .sidebar.active{
 	width: 250px;
-	overflow-x: hidden;
 }
 
 .sidebar.active ~ .main_content {
@@ -48,7 +44,6 @@
 	line-height: 50px;
 	transform: translateX(-50%);
 	cursor: pointer;
-	overflow-x: hidden;
 }
 
 .sidebar.active #btn {
@@ -63,7 +58,6 @@
 	align-items: center;
 	pointer-events: none;
 	opacity: 0;
-	overflow-x: hidden;
 }
 
 .sidebar.active .top .logo {
@@ -74,18 +68,15 @@
 	font-size: 2rem;
 	margin-right: 5px;
 }
-
 .user{
 	display: flex;
 	align-items: center;
 	margin: 1rem 0;
 }
-
 .user p{
 	color: #fff;
 	opacity: 1;
 	margin-left: 1rem;
-	overflow-x: hidden;
 }
 
 .bold {
@@ -99,7 +90,6 @@
 .sidebar.active p{
 	opacity: 1;
 }
-
 .sidebar ul li {
 	position: relative;
 	list-style-type: none;
@@ -107,7 +97,6 @@
 	width: 90%;
 	margin: 0.8rem auto;
 	line-height: 50px;
-	overflow-x: hidden;
 }
 
 .sidebar ul li a{
@@ -121,16 +110,14 @@
 .sidebar ul li a:hover{
 	background-color: #fff;
 	color: #202229;
-	overflow-x: hidden;
 }
 
-.sidebar ul li a i {
+.sidebar ul li a i { 
 	min-width: 50px;
 	text-align: center;
 	height: 50px;
 	border-radius: 12px;
 	line-height: 50px;
-	overflow-x: hidden;
 }
 
 
@@ -156,7 +143,7 @@
 }
 
 .sidebar ul li:hover .tooltip {
-	display: inline;
+	display: inline-block;
 }
 
 .sidebar.active ul li .tooltip{
@@ -176,6 +163,7 @@
 	padding: 1rem;
 	opacity: 1;
 }
+
 
 .container {
 	display: flex;
