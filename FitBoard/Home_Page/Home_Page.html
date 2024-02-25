@@ -3,10 +3,25 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>FitBoard</title>
+        <style>
+            #color-wheel {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background: conic-gradient(red, orange, yellow, green, blue, violet, red);
+                cursor: pointer;
+            }
+            
+            #text {
+                font-size: 24px;
+                margin-top: 20px;
+            }
+        </style>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="Home_Page.css">
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+        <link rel="icon" href="../Landing_Page/favicon.ico">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -66,9 +81,9 @@
                 <li>
                     <a href="#">
                         <i class="bx bxs-duplicate"></i>
-                        <span class="Nav_Item">Create </span>
+                        <span class="Nav_Item">Modify&#160Programs</span>
                     </a>
-                    <span class="tooltip">Create </span>
+                    <span class="tooltip">Modify&#160Programs </span>
                 </li>
                 <li>
                     <a href="#">
@@ -94,12 +109,12 @@
                 <li>
                     <a href="#">
                         <i class="bx bxs-video"></i>
-                        <span class="Nav_Item">Video</span>
+                        <span class="Nav_Item">Video&#160Tutorials</span>
                     </a>
-                    <span class="tooltip">Video</span>
+                    <span class="tooltip">Video&#160Tutorials</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../Landing_Page/LandingPage.html">
                         <i class="bx bxs-log-out"></i>
                         <span class="Nav_Item">Logout</span>
                     </a>
@@ -109,10 +124,10 @@
         </div>
 
         <div class="main_content">
-            <div class="container">
-                <h1>FitBoard</h1>
-                <h1>Logout</h1>
+            <div class="container" id="top-bar">
+                <h1>FitBoard</h1>      
             </div>
+            <div id="color-wheel"></div>
         </div>
 
     </body>
@@ -126,5 +141,44 @@
         };
         
     </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const colorWheel = document.getElementById('color-wheel');
+        const container = document.getElementById('top-bar');
+
+        // Get the angle of the mouse relative to the center of the color wheel
+        function getAngle(event) {
+            const rect = colorWheel.getBoundingClientRect();
+            const x = event.clientX - rect.left - rect.width / 2;
+            const y = event.clientY - rect.top - rect.height / 2;
+            return Math.atan2(y, x) + Math.PI / 2;
+        }
+
+        // Set container background color based on angle
+        function setBackgroundColor(angle) {
+            let hue = (angle * 180 / Math.PI) % 360;
+            hue = hue < 0 ? 360 + hue : hue; // Ensure hue is within 0-360 range
+            container.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
+        }
+
+        // Update color when user drags the mouse
+        let dragging = false;
+        colorWheel.addEventListener('mousedown', function (event) {
+            dragging = true;
+            setBackgroundColor(getAngle(event));
+        });
+
+        colorWheel.addEventListener('mousemove', function (event) {
+            if (dragging) {
+                setBackgroundColor(getAngle(event));
+            }
+        });
+
+        document.addEventListener('mouseup', function () {
+            dragging = false;
+        });
+    });
+</script>
 
 </html>
