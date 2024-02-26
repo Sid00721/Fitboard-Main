@@ -144,30 +144,39 @@ h1 {
     </tr>  
   </thead>  
   <tbody>  
-    <tr>  
+    <tr> 
       <td class="data"> ex1 </td>  
       <td class="data"> some </td>  
       <td class="data"> a few </td>  
       <td>  
         <button class="save"> Save </button>  
         <button class="edit"> Edit </button>  
-        <button class="delete"> Delete </button>  
+        <button class="delete"> Delete </button> 
       </td>  
     </tr>  
-   
+    <tr> 
+      <td>  
+        <button class="add"> add </button>  
+      </td>  
+    </tr>
   </tbody>  
+  
 </table>  
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>  
 <script>  
+
 $(document).on('click', '.edit', function() {  
+  
   $(this).parent().siblings('td.data').each(function() {  
     var content = $(this).html();  
     $(this).html('<input value="' + content + '" />');  
-  });  
+  }); 
   $(this).siblings('.save').show();  
   $(this).siblings('.delete').hide();  
   $(this).hide();  
 });  
+
 $(document).on('click', '.save', function() {  
   $('input').each(function() {  
     var content = $(this).val();  
@@ -178,12 +187,15 @@ $(document).on('click', '.save', function() {
   $(this).siblings('.delete').show();  
   $(this).hide();  
 });  
+
 $(document).on('click', '.delete', function() {  
   $(this).parents('tr').remove();  
 });  
+
 $('.add').click(function() {  
   $(this).parents('table').append('<tr><td class="data"></td><td class="data"></td><td class="data"></td><td><button class="save">Save</button><button class="edit">Edit</button> <button class="delete">Delete</button></td></tr>');  
 });  
+
 </script>  
 </body>  
 </html>  
