@@ -133,6 +133,7 @@
 	position: absolute;
 	left: 75px;
 	top: 5%;
+	background-color: white;
 	transform: translateX(-50%, -50%);
 	box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
 	border-radius: 0.6rem;
@@ -211,8 +212,10 @@
 	padding: 0;
 	box-sizing: border-box;
   }
+  
   :root{
 	--dark: #111111;
+	--gray: #202229;
 	--sun: #ffd700;
 	--sun-shadow: #987416;
 	--moon: #dddddd;
@@ -239,6 +242,11 @@
   .dark{
 	background: var(--dark);
   }
+
+  .gray{
+	background: var(--gray);
+  }
+
   .container1{
 	position: relative;
 	display: inline-block;
