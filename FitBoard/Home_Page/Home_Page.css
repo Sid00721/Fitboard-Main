@@ -30,8 +30,14 @@
     padding: 0.4rem 0.8rem; /* Padding using rem */
 }
 
-#submenu {
-    display: none;
+#sub-heading {
+    position: absolute;
+    opacity: 0;
+    left: 100px;
+}
+
+#main-heading, h3 {
+    transition: opacity 0.5s ease-in;
 }
 
 .sidebar.active {
@@ -43,19 +49,21 @@
     width: calc(100% - 25px);
 }
 
+.sidebar.active ~ .main_content #main-heading{
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
 .sidebar.active ~ .main_content h3{
     opacity: 0;
+    transition: opacity 0.5s ease-out;
 }
 
-.sidebar.active ~ .main_content h1{
-    opacity: 0;
+.sidebar.active ~ .main_content #sub-heading {
+    left: 30px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
 }
-
-
-.sidebar.active ~ .main_content #submenu{
-    display: inline-block;
-}
-
 
 .sidebar #btn {
     position: absolute;

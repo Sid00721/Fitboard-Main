@@ -5,5 +5,9 @@ let side_bar = document.querySelector('.sidebar')
 // Adding a click event listener to the button
 btn.onclick = function () {
     side_bar.classList.toggle('active');
-    heading.textContent = "yauyduahdu"
 };
+
+
+
+
+
