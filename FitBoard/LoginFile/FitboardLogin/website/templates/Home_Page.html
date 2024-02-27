@@ -5,9 +5,8 @@
         <title>FitBoard</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="Settings.css">
+        <link rel="stylesheet" href="Home_Page.css">
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
-        <link rel="icon" href="../Landing_Page/favicon.ico">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -51,14 +50,14 @@
 
             <ul>
                 <li>
-                    <a href="../Home_Page/Home_Page.html">
+                    <a href="#">
                         <i class="bx bxs-grid-alt"></i>
                         <span class="Nav_Item">Dashboard</span>
                     </a>
                     <span class="tooltip">Dashboard</span>
                 </li>
                 <li>
-                    <a href="../Profile/Profile.html">
+                    <a href="#">
                         <i class="bx bxs-user-circle"></i>
                         <span class="Nav_Item">Profile</span>
                     </a>
@@ -67,12 +66,12 @@
                 <li>
                     <a href="#">
                         <i class="bx bxs-duplicate"></i>
-                        <span class="Nav_Item">Modify&#160Programs</span>
+                        <span class="Nav_Item">Create Program</span>
                     </a>
-                    <span class="tooltip">Modify&#160Programs </span>
+                    <span class="tooltip">Create Program</span>
                 </li>
                 <li>
-                    <a href="../Notifications/Notifications.html">
+                    <a href="#">
                         <i class="bx bxs-bell-ring"></i>
                         <span class="Nav_Item">Notifications</span>
                     </a>
@@ -80,27 +79,27 @@
                 </li>
                 <li>
                     <a href="#">
-                        <i class="bx bxs-video"></i>
-                        <span class="Nav_Item">Video&#160Tutorials</span>
-                    </a>
-                    <span class="tooltip">Video&#160Tutorials</span>
-                </li>
-                <li>
-                    <a href="Settings.html">
                         <i class="bx bxs-cog"></i>
                         <span class="Nav_Item">Settings</span>
                     </a>
                     <span class="tooltip">Settings</span>
                 </li>
                 <li>
-                    <a href="../Help/Help.html">
+                    <a href="#">
                         <i class="bx bxs-help-circle"></i>
                         <span class="Nav_Item">Help</span>
                     </a>
                     <span class="tooltip">Help</span>
                 </li>
                 <li>
-                    <a href="../Landing_Page/LandingPage.html">
+                    <a href="#">
+                        <i class="bx bxs-video"></i>
+                        <span class="Nav_Item">Video Tutorials</span>
+                    </a>
+                    <span class="tooltip">Video Tutorials</span>
+                </li>
+                <li>
+                    <a href="#">
                         <i class="bx bxs-log-out"></i>
                         <span class="Nav_Item">Logout</span>
                     </a>
@@ -110,31 +109,22 @@
         </div>
 
         <div class="main_content">
-            <div class="container" id="container">
+            <div class="container">
                 <h1>FitBoard</h1>
-                <h3>&#160&#160Settings</h3>      
+                <h1>Logout</h1>
             </div>
-            <div class="slidecontainer">
-                Colour
-                <input type="range" min="1" max="100" value="50" class="colour_slider" id="myRange">
-            </div>
-
-            <main id="main">
-                <label class="container1">
-                    <input type="checkbox" id="toggle">
-                    <!--Keeps toggle in local storage-->
-                    <span class="slider round">
-                        <div class="background"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                    </span>
-                </label>
-            </main>
         </div>
+
     </body>
 
-    <script src="Activite_Sidebar.js"> </script>
+    <script>
+        let btn = document.querySelector('#btn')
+        let sidebar = document.querySelector('.sidebar')
 
-    <script src="darklight_mode.js"> </script>
+        btn.onclick = function () {
+            sidebar.classList.toggle('active');
+        };
+        
+    </script>
 
 </html>
