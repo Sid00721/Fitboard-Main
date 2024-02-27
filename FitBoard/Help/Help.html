@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        
     </head>
     <body>
 
@@ -112,10 +113,24 @@
         <div class="main_content">
             <div class="container" id="container">
                 <h1>FitBoard</h1>
-                <h1>Help</h1>      
+                <h3>&#160&#160Help</h3>      
+            </div>
+            <div class="paragraph">
+                This ia a program for weight. this does this that does that
+                contact us at 1300655506
             </div>
         </div>
-
+    
+        <script>
+            // Read the mode from the "mode.txt" file
+            fetch('mode.txt')
+                .then(response => response.text())
+                .then(mode => {
+                    // Check if mode is "dark" or "light" and apply appropriate class to body
+                    document.body.classList.toggle('dark-mode', mode.trim() === 'dark');
+                })
+                .catch(error => console.error('Error reading mode:', error));
+        </script>
     </body>
 
     <script src="Activite_Sidebar.js"> </script>
