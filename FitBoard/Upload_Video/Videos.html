@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FitBoard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="Videos.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    <link rel="icon" href="../Landing_Page/favicon.ico">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body onload="onload()">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Top Bar -->
+        <div class="top">
+            <div class="logo"> 
+                <img src="../Images/Logo.png" alt="logo" width="50px" height="50px">
+                <span>FITBOARD</span>
+            </div>
+            <i class='bx bx-menu' id="btn"></i> <!-- Sidebar toggle button -->
+        </div>
+        <!-- User Profile Section -->
+        <div class="user">
+            <img src="../Images/User_Image.jpg" alt="profile picture" class="User_Image">
+            <div>
+                <p class="bold">Clint&#160B.</p>
+                <p>Admin</p>
+            </div>
+        </div>
+        <!-- Navigation Links -->
+        <ul>
+            <li>
+                <a href="Home_Page.html">
+                    <i class="bx bxs-grid-alt"></i>
+                    <span class="Nav_Item">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="../Profile/Profile.html">
+                    <i class="bx bxs-user-circle"></i>
+                    <span class="Nav_Item">Profile</span>
+                </a>
+                <span class="tooltip">Profile</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-duplicate"></i>
+                    <span class="Nav_Item">Modify&#160Programs</span>
+                </a>
+                <span class="tooltip">Modify&#160Programs</span>
+            </li>
+            <li>
+                <a href="../Notifications/Notifications.html">
+                    <i class="bx bxs-bell-ring"></i>
+                    <span class="Nav_Item">Notifications</span>
+                </a>
+                <span class="tooltip">Notifications</span>
+            </li>
+            <li>
+                <a href="../Upload_Video/newupload.html">
+                    <i class="bx bxs-video"></i>
+                    <span class="Nav_Item">Video&#160Tutorials</span>
+                </a>
+                <span class="tooltip">Video&#160Tutorials</span>
+            </li>
+            <li>
+                <a href="../Settings/Settings.html">
+                    <i class="bx bxs-cog"></i>
+                    <span class="Nav_Item">Settings</span>
+                </a>
+                <span class="tooltip">Settings</span>
+            </li>
+            <li>
+                <a href="../Help/Help.html">
+                    <i class="bx bxs-help-circle"></i>
+                    <span class="Nav_Item">Help</span>
+                </a>
+                <span class="tooltip">Help</span>
+            </li>
+            <li>
+                <a href="../Landing_Page/LandingPage.html">
+                    <i class="bx bxs-log-out"></i>
+                    <span class="Nav_Item">Logout</span>
+                </a>
+                <span class="tooltip">Logout</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main_content">
+        <div class="container">
+            <h1 id="sub-heading">Dashboard</h1>
+            <h1 id="main-heading">FitBoard</h1>
+            <h3>Dashboard</h3>      
+        </div>
+
+        <div class="content">
+            <div class="main_video">
+                <video src="video1.mp4" controls muted autoplay></video>
+                <h3 class="title">01. video title goes here</h3>
+            </div>
+
+            <div class="video_list">
+                <div class="vid active">
+                    <video src="video1.mp4" muted></video>
+                    <h3 class="title">01. video title goes here</h3>
+                </div>
+
+                <div class="vid">
+                    <video src="video2.mp4" muted></video>
+                    <h3 class="title">02. video title goes here</h3>
+                </div>
+
+                <div class="vid">
+                    <video src="video3.mp4" muted></video>
+                    <h3 class="title">03. video title goes here</h3>
+                </div>
+
+                <div class="vid">
+                    <video src="video4.mp4" muted></video>
+                    <h3 class="title">04. video title goes here</h3>
+                </div>
+
+                <div class="vid">
+                    <video src="video5.mp4" muted></video>
+                    <h3 class="title">05. video title goes here</h3>
+                </div>
+            </div>
+        </div>
+
+    <!-- External JavaScript -->
+    <script src="../Settings/darklight_mode.js"></script>
+    <script src="Activite_Sidebar.js"> </script>
+
+    <script>
+        let listVideo = document.querySelectorAll('.video_list .vid');
+        let mainVideo = document.querySelector('.main_video video');
+        let title = document.querySelector('.main_video .title');
+
+        listVideo.forEach(video =>{
+            video.onclick = () =>{
+                listVideo.forEach(vid => vid.classList.remove('active'));
+                video.classList.add('active');
+                if(video.classList.contains('active')){
+                    let src = video.children[0].getAttribute('src');
+                    mainVideo.src = src;
+                    let text = video.children[1].innerHTML
+                    title.innerHTML = text;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
