@@ -222,6 +222,13 @@
 	--gray: #202229;
 }
 
+.heading {
+    color: #444;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+}
+
 .content{
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -231,7 +238,7 @@
 }
 
 .content .main_video{
-    background: #fff;
+    background: var(--gray);
     border-radius: 5px;
     padding: 10px;
 }
@@ -242,14 +249,20 @@
 }
 
 .content .main_video .title{
-    color: grey;
+    color: rgb(255, 255, 255);
     font-size: 23px;
     padding-top: 15px;
     padding-bottom: 15px;
 }
 
+.content .main_video .description{
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    padding-top: 15px;
+}
+
 .content .video_list{
-    background: #fff;
+    background: var(--gray);
     border-radius: 5px;
     height: 520px;
     overflow-y: scroll;
