@@ -1,31 +1,28 @@
-const toggle = document.getElementById("toggle");
-const mainContent = document.querySelector('.main_content');
-const sidebar = document.querySelector('.sidebar');
-console.log('Script is running');
+function darkmode() {
+  const wasDarkmode = localStorage.getItem('darkmode') === 'true';
+  localStorage.setItem('darkmode', !wasDarkmode);
 
-// Function to set dark mode state
-function setDarkMode(enabled) {
-    if (enabled) {
-        mainContent.classList.add('gray');
-        sidebar.classList.add('dark');
-        localStorage.setItem('darkModeEnabled', 'true');
-        console.log('Dark mode is enabled. Adding classes...');
-    } else {
-        mainContent.classList.remove('gray');
-        sidebar.classList.remove('dark');
-        localStorage.setItem('darkModeEnabled', 'false');
-        console.log('Dark mode is disabled. Removing classes...');
-    }
+  // Select elements with desired classes
+  const elements = document.querySelectorAll('.sidebar, .main_content');
 
+  // Toggle the dark-mode class on each selected element
+  for (const element of elements) {
+      element.classList.toggle('dark-mode', !wasDarkmode);
+  }
 }
 
-// Check if dark mode was enabled previously
-const darkModeEnabled = localStorage.getItem('darkModeEnabled') === 'true';
-console.log('Dark mode status in local storage:', localStorage.getItem('darkModeEnabled'));
-toggle.checked = darkModeEnabled; // Set switch state
-setDarkMode(darkModeEnabled);
+function onload() {
+  // Check for dark mode preference and apply it to elements
+  const isDarkmode = localStorage.getItem('darkmode') === 'true';
+  const elements = document.querySelectorAll('.sidebar, .main_content');
 
-// Event listener for dark mode toggle
-toggle.addEventListener('change', () => {
-    setDarkMode(toggle.checked);
-});
+  for (const element of elements) {
+      element.classList.toggle('dark-mode', isDarkmode);
+  }
+
+  // Set the state of the dark mode switch based on the preference
+  const toggle = document.getElementById("toggle");
+  toggle.checked = isDarkmode;
+}
+
+document.addEventListener('DOMContentLoaded', onload);

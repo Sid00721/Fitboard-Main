@@ -20,7 +20,7 @@
 	left: 0;
 	height: 100vh;
 	width: 80px;
-	background-color: #202229;
+	background-color: black;
 	transition: all 0.5s ease;
 	padding: 0.4rem 0.8rem;									/*rem refers to the font-size of the root element. So padding: 0.2rem on the p tag will be interpreted as 0.2 times 18px which is 3.6px.*/
 }
@@ -177,11 +177,11 @@
 
 .main_content {
 	position: relative;
-	background-color: #eee;
 	overflow: hidden;
 	min-height: 100vh;
 	top: 0;
 	left: 80px;
+	background-color: var(--gray);
 	transition: all 0.5s ease;
 	width: 94.75vw;
 	max-width: 100%;
@@ -189,6 +189,14 @@
 	opacity: 1;
 }
 
+
+.main_content:not(.dark-mode) {
+	background-color: white
+}
+
+.sidebar:not(.dark-mode) {
+	background-color: var(--gray)
+}
 
 .container {
 	display: flex;
@@ -417,6 +425,7 @@
   .slider.round:before {
 	border-radius: 50%;
   }
+
   .background{
 	position: absolute;
 	width: 10px;
@@ -435,4 +444,6 @@
 	-webkit-transition: .4s;
 	transition: .4s;
   }
+
+
   

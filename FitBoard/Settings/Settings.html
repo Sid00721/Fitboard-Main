@@ -12,7 +12,7 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     </head>
-    <body>
+    <body onload="onload()">
 
         <!--Navigation bar Code 
         <nav>
@@ -122,8 +122,7 @@
 
             <main id="main">
                 <label class="container1">
-                    <input type="checkbox" id="toggle">
-                    <!--Keeps toggle in local storage-->
+                    <input type="checkbox" id="toggle" onclick="darkmode()">
                     <span class="slider round">
                         <div class="background"></div>
                         <div class="star"></div>
