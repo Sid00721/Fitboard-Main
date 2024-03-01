@@ -69,14 +69,14 @@
             {'exercise': 'Russian Twist', 'muscle': 'obliques', 'category': 'Accessory'},
             {'exercise': 'Burpees', 'muscle': 'full body', 'category': 'Main'},
         ];
-
+    
         // Object to track the current sort order for each column
         const sortOrder = {
             'exercise': 'asc',
             'muscle': 'asc',
             'category': 'asc'
         };
-
+    
         // Function to generate HTML content for the exercise table
         function generateExerciseTable(exercises) {
             let html = '<table>';
@@ -89,7 +89,7 @@
             html += '</table>';
             return html;
         }
-
+    
         // Function to sort the table by column
         function sortTable(column) {
             if (sortOrder[column] === 'asc') {
@@ -104,27 +104,33 @@
             // Update the content in the exercise-list div
             document.getElementById('exercise-list').innerHTML = exerciseTableHTML;
         }
-
+    
         // Function to handle form submission
         document.getElementById('exercise-form').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the default form submission
             const form = event.target;
-            const newExercise = {
-                'exercise': form.elements['exercise'].value,
-                'muscle': form.elements['muscle'].value,
-                'category': form.elements['category'].value
-            };
-            exerciseList.push(newExercise);
-            // Re-generate HTML content for the exercise table
-            const exerciseTableHTML = generateExerciseTable(exerciseList);
-            // Update the content in the exercise-list div
-            document.getElementById('exercise-list').innerHTML = exerciseTableHTML;
-            form.reset(); // Reset the form fields
+            const exerciseName = form.elements['exercise'].value.trim(); // Trim leading and trailing whitespace
+            if (exerciseName !== '') {
+                const newExercise = {
+                    'exercise': exerciseName,
+                    'muscle': form.elements['muscle'].value,
+                    'category': form.elements['category'].value
+                };
+                exerciseList.push(newExercise);
+                // Re-generate HTML content for the exercise table
+                const exerciseTableHTML = generateExerciseTable(exerciseList);
+                // Update the content in the exercise-list div
+                document.getElementById('exercise-list').innerHTML = exerciseTableHTML;
+                form.reset(); // Reset the form fields
+            } else {
+                alert("Please enter a valid exercise name.");
+            }
         });
-
+    
         // Initial generation of the exercise table
         const exerciseTableHTML = generateExerciseTable(exerciseList);
         document.getElementById('exercise-list').innerHTML = exerciseTableHTML;
     </script>
+    
 </body>
 </html>
