@@ -1,6 +1,5 @@
 /* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
 /* Global Styles */
 * {
     margin: 0;
@@ -218,7 +217,7 @@
 }
 
 
-.Editable_Image {					/*css for profile picture*/
+.profile_picture {					/*css for profile picture*/
 	width: 200px;
 	height: 200px;
 	border-radius: 100%;
@@ -226,6 +225,26 @@
     position: relative;
     top: 8vh;
     left: 10vw;
+    background: url(../Images/User_Image.jpg);
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+
+.Editable_Image{
+    position: absolute;
+    bottom: 0;
+    outline: none;
+    color: transparent;
+    width: 100%;;
+    box-sizing: border-box;
+    padding: 15px 120px;
+    cursor: pointer;
+    transition: 0.5s;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.Editable_Image::-webkit-file-upload-button{
+    visibility: hidden;
 }
 
 textarea {
@@ -240,7 +259,7 @@ textarea {
 	font-size: 16px;
 	resize: none;
     position: relative;
-    top: 14vh;
+    top: 17vh;
     left: 10vw;
   }
 
@@ -276,6 +295,9 @@ textarea {
     font-weight: 1000;
   }
 
-  .Biography .text{
-    font-size: 100px;
+.text{
+    font-size: 20px;
+    position: relative;
+    top: 15vh;
+    left: 10vw;
   }
