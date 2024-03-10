@@ -266,7 +266,16 @@ textarea {
   }
 
   .info{
-    position: relative;
+    position: absolute;
     left: 55vw;
-    top: 10vh;
+    top: 25vh;
+    line-height: 25px;
+  }
+
+  .bold{
+    font-weight: 1000;
+  }
+
+  .Biography .text{
+    font-size: 100px;
   }
