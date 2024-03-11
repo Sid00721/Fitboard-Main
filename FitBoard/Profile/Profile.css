@@ -217,34 +217,56 @@
 }
 
 
-.profile_picture {					/*css for profile picture*/
-	width: 200px;
-	height: 200px;
-	border-radius: 100%;
-	border: 4px solid #000000;
+.profile_picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    border: 4px solid #000000;
     position: relative;
     top: 8vh;
     left: 10vw;
-    background: url(../Images/User_Image.jpg);
-    background-size: 100% 100%;
     overflow: hidden;
 }
 
-.Editable_Image{
+.editable_image {
     position: absolute;
     bottom: 0;
     outline: none;
     color: transparent;
-    width: 100%;;
+    width: 100%;
     box-sizing: border-box;
     padding: 15px 120px;
     cursor: pointer;
     transition: 0.5s;
     background: rgba(0, 0, 0, 0.5);
+    opacity: 0; /* Hide the input */
 }
 
-.Editable_Image::-webkit-file-upload-button{
-    visibility: hidden;
+.upload_button {
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 0;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.profile_picture:hover .upload_button {
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 1;
+}
+
+#previewImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire container */
 }
 
 textarea {

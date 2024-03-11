@@ -43,7 +43,7 @@
             </div>
 
             <div class="user">
-                <img src="../Images/User_Image.jpg" alt="profile picture" class="User_Image">
+                <img src="../Images/User_Image.jpg" alt="profile picture" class="User_Image" id="userImage">
                 <div>
                     <p class="bold">Clint B.</p>
                     <p>Admin</p>
@@ -138,7 +138,9 @@
             </div>
 
             <div class="profile_picture">
-                <input type="file" class="Editable_Image">
+                <input type="file" class="editable_image" accept="image/*" id="fileInput">
+                <label for="fileInput" class="upload_button">Upload Image</label>
+                <img id="previewImage" src="../Images/User_Image.jpg" alt="Preview" />
             </div>
 
             <div class="biography">
@@ -154,6 +156,7 @@
         
         <script src="../Home_Page/Activite_Sidebar.js"> </script>
         <script src="../Settings/darklight_mode.js"> </script>
+        <script src="../Profile/Profile_Pic.js"></script>
     </body>
 
 </html>
