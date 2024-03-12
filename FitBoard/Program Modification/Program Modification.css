@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');  
+body {  
+  font-family: 'Montserrat', sans-serif;  
+  text-align: center;  
+}  
+body{  
+  background-color: rgb(63,72,83);  
+  font-family: sans-serif;  
+  color: rgb(0, 0, 0);  
+  overflow-x: hidden;  
+}  
+td:hover {  
+  color: rgb(79, 107, 230);   
+  transition-delay: 0s;  
+    transition-duration: 0.1s;  
+    transition-property: all;  
+  transition-timing-function: line;  
+}  
+h1 {  
+  position: relative;  
+  padding: 0;  
+  margin: 10;  
+  font-family: "Raleway", sans-serif;  
+ font-weight: 400;  
+  font-size: 40px;  
+  color: white;  
+  -webkit-transition: all 0.4s ease 0s;  
+  -o-transition: all 0.4s ease 0s;  
+  transition: all 0.4s ease 0s;   
+}  
+.table {  
+  width: 100%;  
+  thead {  
+    th {  
+      padding: 10px 10px;  
+      background: #00adee;  
+      font-size: 25px;  
+      text-transform: uppercase;  
+      vertical-align: top;  
+      color: #1D4A5A;  
+      font-weight: normal;  
+      text-align: left;  
+    }  
+  }  
+  tbody {  
+    tr {  
+      td {  
+        padding: 10px;  
+        background: #f2f2f2;  
+        font-size: 14px;  
+      }  
+    }  
+  }  
+}
+.newabove{  
+  outline: none;  
+  background: none;  
+  border: none;  
+}
+.newbelow{
+  outline: none;  
+  background: none;  
+  border: none; 
+}  
+.edit {  
+  outline: none;  
+  background: none;  
+  border: none;  
+}  
+.save {  
+  outline: none;  
+  background: none;  
+  border: none;  
+}  
+.delete {  
+  outline: none;  
+  background: none;  
+  border: none;  
+}  
+.newabove{
+  padding: 5px 10px;  
+  cursor: pointer;  
+}
+.newbelow{
+  padding: 5px 10px;  
+  cursor: pointer;  
+}
+.edit {  
+  padding: 5px 10px;  
+  cursor: pointer;  
+}  
+.save {  
+  padding: 5px 10px;  
+  cursor: pointer;  
+}  
+.delete {  
+  padding: 5px 10px;  
+  cursor: pointer;  
+}  
+.newabove{
+  background: #2cdd85;  
+  color: #ffffff;  
+  &:hover {  
+    background: darken(#2cdd85, 10%);  
+  }  
+}
+.newbelow{
+ background: #eeb600;  
+  color: #ffffff;  
+  &:hover {  
+    background: darken(#eeb600, 10%);  
+  }  
+}
+.edit {  
+  background: #2199e8;  
+  color: #ffffff;  
+  &:hover {  
+    background: darken(#2199e8, 10%);  
+  }  
+}  
+.save {  
+  display: none;  
+  background: #32AD60;  
+  color: #ffffff;  
+  &:hover {  
+    background: darken(#32AD60, 10%);  
+  }  
+}  
+.delete {    
+  display: none;  
+  background: #EC5840;  
+  color: #ffffff;  
+   &:hover {  
+    background: darken(#EC5840, 10%);  
+  }  
+}  
