@@ -17,6 +17,43 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+
+<style>
+    #button1 {
+            background-color: white;
+            border: none;
+            border-radius: 15px;
+            color: black;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border: 2px solid #04AA6D;
+        }
+
+        #button1:hover {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        #fileInfo {
+            margin-top: 20px;
+        }
+
+        #displayVideoButton {
+            display: none;
+            margin-top: 10px;
+        }
+</style>
+
 </head>
 <body onload="onload()">
     <!-- Sidebar -->
@@ -218,11 +255,83 @@
                     <h3 class="title">20. video title goes here</h3>
                 </div>
             </div>
+            <button id="button1" onclick="openFileExplorer()" style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: bold;">Upload Video</button>
+                    <div class="info" id="info">
+                        <!-- Hidden file input element -->
+                        <input type="file" id="fileInput" accept=".mp4">
+        
+                        <!-- Display selected file information -->
+                        <div id="fileInfo"></div>
+        
+                        <!-- Button to display video -->
+                        <button id="displayVideoButton" onclick="displayVideo()" style="display:none;">Display Video</button>
+                        <div id="videoContainer"></div>
+                    </div>
         </div>
-
+        
     <!-- External JavaScript -->
     <script src="../Settings/darklight_mode.js"></script>
     <script src="../Home_Page/Activite_Sidebar.js"> </script>
     <script src="Videos.js">  </script>
+
+    <script>
+        function openFileExplorer() {
+            const fileInput = document.getElementById('fileInput');
+            fileInput.click();
+        }
+
+        document.getElementById('fileInput').addEventListener('change', function () {
+            const fileInfo = document.getElementById('fileInfo');
+            const selectedFile = this.files[0];
+            if (selectedFile) {
+                const fileName = selectedFile.name;
+                fileInfo.innerText = 'Selected File: ' + fileName;
+                if (fileName.endsWith('.mp4')) {
+                    button1.innerText = 'Uploaded';
+                    button1.style.color = 'white';
+                    button1.style.background = '#04AA6D';
+                    fileInfo.style.color = 'green';
+                    fileInfo.innerText += ' (Accepted)';
+                    document.getElementById('displayVideoButton').style.display = 'inline-block';
+                } else {
+                    fileInfo.style.color = 'red';
+                    fileInfo.innerText += ' (Error: Only .mp4 files are accepted)';
+                    document.getElementById('displayVideoButton').style.display = 'none';
+                }
+            } else {
+                fileInfo.innerText = '';
+                document.getElementById('displayVideoButton').style.display = 'none';
+            }
+        });
+
+        function displayVideo() {
+            const selectedFile = document.getElementById('fileInput').files[0];
+            const fileName = selectedFile.name;
+            const filePath = URL.createObjectURL(selectedFile);
+            const videoContainer = document.getElementById('videoContainer');
+            const video = `
+                <video controls style="max-width: 100%;">
+                    <source src="${filePath}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            `;
+            videoContainer.innerHTML = video;
+        }
+
+        
+   // JavaScript to enable dark mode
+    document.addEventListener('DOMContentLoaded', function () {
+    const body = document.getElementById('body');
+    const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+
+    if (isDarkMode) {
+        body.classList.add('dark');
+    }
+});
+
+
+
+
+    </script>
 </body>
 </html>
