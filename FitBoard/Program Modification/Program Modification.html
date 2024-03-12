@@ -8,144 +8,10 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">  
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">  
 </head>  
-<style>  
- @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');  
-body {  
-  font-family: 'Montserrat', sans-serif;  
-  text-align: center;  
-}  
-body{  
-  background-color: rgb(63,72,83);  
-  font-family: sans-serif;  
-  color: rgb(248, 168, 168);  
-  overflow-x: hidden;  
-}  
-td:hover {  
-  color: blueviolet;   
-  transition-delay: 0s;  
-    transition-duration: 0.1s;  
-    transition-property: all;  
-  transition-timing-function: line;  
-}  
-h1 {  
-  position: relative;  
-  padding: 0;  
-  margin: 10;  
-  font-family: "Raleway", sans-serif;  
- font-weight: 400;  
-  font-size: 40px;  
-  color: white;  
-  -webkit-transition: all 0.4s ease 0s;  
-  -o-transition: all 0.4s ease 0s;  
-  transition: all 0.4s ease 0s;   
-}  
-.table {  
-  width: 100%;  
-  thead {  
-    th {  
-      padding: 10px 10px;  
-      background: #00adee;  
-      font-size: 25px;  
-      text-transform: uppercase;  
-      vertical-align: top;  
-      color: #1D4A5A;  
-      font-weight: normal;  
-      text-align: left;  
-    }  
-  }  
-  tbody {  
-    tr {  
-      td {  
-        padding: 10px;  
-        background: #f2f2f2;  
-        font-size: 14px;  
-      }  
-    }  
-  }  
-}
-.newabove{  
-  outline: none;  
-  background: none;  
-  border: none;  
-}
-.newbelow{
-  outline: none;  
-  background: none;  
-  border: none; 
-}  
-.edit {  
-  outline: none;  
-  background: none;  
-  border: none;  
-}  
-.save {  
-  outline: none;  
-  background: none;  
-  border: none;  
-}  
-.delete {  
-  outline: none;  
-  background: none;  
-  border: none;  
-}  
-.newabove{
-  padding: 5px 10px;  
-  cursor: pointer;  
-}
-.newbelow{
-  padding: 5px 10px;  
-  cursor: pointer;  
-}
-.edit {  
-  padding: 5px 10px;  
-  cursor: pointer;  
-}  
-.save {  
-  padding: 5px 10px;  
-  cursor: pointer;  
-}  
-.delete {  
-  padding: 5px 10px;  
-  cursor: pointer;  
-}  
-.newabove{
-  background: #e6f32a;  
-  color: #ffffff;  
-  &:hover {  
-    background: darken(#e6f32a, 10%);  
-  }  
-}
-.newbelow{
- background: #1df8db;  
-  color: #ffffff;  
-  &:hover {  
-    background: darken(#1df8db, 10%);  
-  }  
-}
-.edit {  
-  background: #2199e8;  
-  color: #ffffff;  
-  &:hover {  
-    background: darken(#2199e8, 10%);  
-  }  
-}  
-.save {  
-  display: none;  
-  background: #32AD60;  
-  color: #ffffff;  
-  &:hover {  
-    background: darken(#32AD60, 10%);  
-  }  
-}  
-.delete {  
-  background: #EC5840;  
-  color: #ffffff;  
-   &:hover {  
-    background: darken(#EC5840, 10%);  
-  }  
-}  
-</style>  
-<body>  
+<link rel="stylesheet" href="Program Modification.css">
+
+<body>
+
 <table id="program table" class="table data" >  
 <h1> Create Program </h1>  
   <thead>  
@@ -171,19 +37,20 @@ h1 {
   </tbody>  
 </table>  
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>  
 <script>  
 
 function add_row_above(button) {
   var Current_Row = button.parentNode.parentNode;
   var New_Row = Current_Row.cloneNode(true);
+  New_Row.querySelectorAll("td:not(:last-child)").forEach(cell => {cell.textContent = ""})
   Current_Row.parentNode.insertBefore(New_Row, Current_Row);
 }
 
 function add_row_below(button) {
   var Current_Row = button.parentNode.parentNode;
   var New_Row = Current_Row.cloneNode(true);
+  New_Row.querySelectorAll("td:not(:last-child)").forEach(cell => {cell.textContent = ""})
   Current_Row.parentNode.insertBefore(New_Row, Current_Row.nextSibling);
 }
 
@@ -195,7 +62,7 @@ $(document).on('click', '.edit', function() {
     $(this).html('<input value="' + content + '" />');  
   }); 
   $(this).siblings('.save').show();  
-  $(this).siblings('.delete').hide();
+  $(this).siblings('.delete').show();
   $(this).siblings('.newabove').hide();
   $(this).siblings('.newbelow').hide();
   $(this).hide();  
@@ -205,12 +72,12 @@ $(document).on('click', '.save', function() {
   $('input').each(function() {  
     var content = $(this).val();  
     $(this).html(content);  
-    $(this).contents().unwrap();  
+    $(this).contents().unwrap();
   });  
   $(this).siblings('.edit').show();  
-  $(this).siblings('.delete').show();
   $(this).siblings('.newabove').show();
   $(this).siblings('.newbelow').show();  
+  $(this).siblings('.delete').hide();
   $(this).hide();  
 });  
 
