@@ -1,3 +1,4 @@
 {
-    "livePreview.defaultPreviewPath": "/FitBoard/Landing_Page/LandingPage.html"
+    "livePreview.defaultPreviewPath": "/FitBoard/Landing_Page/LandingPage.html",
+    "liveServer.settings.port": 5501
 }
