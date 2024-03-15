@@ -357,7 +357,6 @@ Icons */
     outline: none;
 }
 
-
 .search-container button {
     padding: 10px;
     background: #ccc;
@@ -369,12 +368,6 @@ Icons */
     position: relative;
 }
 
-
-
-
-
-
-
 #button1 {
     position: absolute;
     bottom: 20px;
@@ -383,3 +376,11 @@ Icons */
 }
 
 
+/* Add styles for editable input field */
+.editable-input {
+    width: calc(100% - 20px); /* Adjust as needed */
+    padding: 5px;
+    margin: 0;
+    border: 1px solid #ccc;
+    font-size: inherit;
+}

@@ -31,3 +31,32 @@ function searchVideos() {
         }
     });
 }
+
+// Function to make video title editable
+function makeEditable(titleElement) {
+    const originalTitle = titleElement.textContent;
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.value = originalTitle;
+    input.classList.add('editable-input');
+
+    input.addEventListener('blur', () => {
+        const newTitle = input.value.trim();
+        if (newTitle !== '' && newTitle !== originalTitle) {
+            titleElement.textContent = newTitle;
+        } else {
+            titleElement.textContent = originalTitle;
+        }
+    });
+
+    titleElement.textContent = '';
+    titleElement.appendChild(input);
+    input.focus();
+}
+
+// Event listener to make video titles editable on double click
+document.querySelectorAll('.video_list .vid .title').forEach(title => {
+    title.addEventListener('dblclick', () => {
+        makeEditable(title);
+    });
+});
