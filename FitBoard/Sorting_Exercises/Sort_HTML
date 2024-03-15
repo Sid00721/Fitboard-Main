@@ -17,7 +17,7 @@
             cursor: pointer; /* Add cursor pointer to indicate clickable */
         }
         th {
-            background-color: #000000;
+            /*background-color: #000000;*/
         }
         form {
             margin-bottom: 20px;
