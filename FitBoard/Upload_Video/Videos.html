@@ -135,6 +135,8 @@
         </ul>
     </div>
 
+  
+
     <!-- Main Content -->
     <div class="main_content">
         <div class="container">
@@ -255,6 +257,13 @@
                     <h3 class="title">20. video title goes here</h3>
                 </div>
             </div>
+
+               <!-- Search container -->
+     <div class="search-container" style="padding: 40px;">
+        <input type="text" id="searchInput" placeholder="Search videos...">
+        <button onclick="searchVideos()"><i class="fas fa-search"></i></button>
+    </div>
+
             <button id="button1" onclick="openFileExplorer()" style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: bold;">Upload Video</button>
                     <div class="info" id="info">
                         <!-- Hidden file input element -->
@@ -305,18 +314,48 @@
         });
 
         function displayVideo() {
-            const selectedFile = document.getElementById('fileInput').files[0];
-            const fileName = selectedFile.name;
-            const filePath = URL.createObjectURL(selectedFile);
-            const videoContainer = document.getElementById('videoContainer');
-            const video = `
-                <video controls style="max-width: 100%;">
-                    <source src="${filePath}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            `;
-            videoContainer.innerHTML = video;
-        }
+    const selectedFile = document.getElementById('fileInput').files[0];
+    const fileName = selectedFile.name;
+    const filePath = URL.createObjectURL(selectedFile);
+    
+    const videoListContainer = document.querySelector('.video_list');
+    
+    // Create a new div element for the uploaded video
+    const newVideoDiv = document.createElement('div');
+    newVideoDiv.classList.add('vid');
+    
+    // Create a video element and set its attributes
+    const newVideo = document.createElement('video');
+    newVideo.src = filePath;
+    newVideo.controls = true;
+    newVideo.muted = true;
+    
+    // Create a title element for the video
+    const newTitle = document.createElement('h3');
+    newTitle.classList.add('title');
+    newTitle.textContent = fileName;
+    
+    // Append video and title elements to the new div
+    newVideoDiv.appendChild(newVideo);
+    newVideoDiv.appendChild(newTitle);
+    
+    // Append the new div to the video list container
+    videoListContainer.appendChild(newVideoDiv);
+    
+    // Add click event listener to the new video div
+    newVideoDiv.addEventListener('click', function() {
+        // Set the clicked video as the main video
+        mainVideo.src = newVideo.src;
+        title.textContent = fileName;
+        
+        // Remove 'active' class from all videos and add it to the clicked one
+        listVideo.forEach(video => video.classList.remove('active'));
+        newVideoDiv.classList.add('active');
+    });
+}
+
+
+
 
         
    // JavaScript to enable dark mode
