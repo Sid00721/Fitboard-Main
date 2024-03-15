@@ -14,3 +14,20 @@ listVideo.forEach(video =>{
         }
     }
 })
+
+document.getElementById('searchInput').addEventListener('input', searchVideos);
+
+function searchVideos() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const videoTitles = document.querySelectorAll('.video_list .vid .title');
+
+    videoTitles.forEach(title => {
+        const vid = title.parentElement;
+        const titleText = title.textContent.toLowerCase();
+        if (titleText.includes(input)) {
+            vid.style.display = 'block';
+        } else {
+            vid.style.display = 'none';
+        }
+    });
+}
