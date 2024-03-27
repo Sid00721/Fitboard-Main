@@ -10,12 +10,13 @@
 }
 
 /* CSS for profile picture */
-.User_Image {
+.User_Image{
     width: 50px;
     height: 50px;
     border-radius: 100%;
     border: 2px solid #eee;
 }
+
 
 /* Sidebar Styles */
 .sidebar {
@@ -99,11 +100,13 @@
 }
 
 /* User Section Styles */
-.user {
+
+.user{
     display: flex;
     align-items: center;
     margin: 1rem 0;
 }
+
 
 .user p {
     color: #fff;
