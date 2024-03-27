@@ -343,3 +343,44 @@ Icons */
         padding: 10px;
     }
 }
+
+.search-container {
+    margin-bottom: 10px;
+}
+
+.search-container input[type=text] {
+    padding: 10px;
+    margin-right: 5px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-container button {
+    padding: 10px;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+}
+
+.main_content {
+    position: relative;
+}
+
+#button1 {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* Add styles for editable input field */
+.editable-input {
+    width: calc(100% - 20px); /* Adjust as needed */
+    padding: 5px;
+    margin: 0;
+    border: 1px solid #ccc;
+    font-size: inherit;
+}
