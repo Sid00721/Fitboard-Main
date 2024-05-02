@@ -101,9 +101,9 @@
 
 /* User Section Styles */
 .user {
-    display: flex;
     align-items: center;
     margin: 1rem 0;
+    display: inline-flex;
 }
 
 .user p {

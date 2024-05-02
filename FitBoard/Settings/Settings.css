@@ -92,10 +92,11 @@
 	font-size: 2rem;
 	margin-right: 5px;
 }
-.user{
-	display: flex;
-	align-items: center;
-	margin: 1rem 0;
+
+.user {
+    align-items: center;
+    margin: 1rem 0;
+    display: inline-flex;
 }
 .user p{
 	color: #fff;
