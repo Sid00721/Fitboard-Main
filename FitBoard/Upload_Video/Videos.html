@@ -148,7 +148,7 @@
         <h3 class="heading">Video Tutorials</h3>
 
         <div class="content">
-
+            
             <div class="main_video">
                 <div style="position: relative; width: 100%; padding-bottom: 56.25%;">
                     <video src="../Upload_Video/Videos/video1.mp4" controls muted autoplay style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;  border-radius: 10px;"></video>
@@ -157,6 +157,12 @@
             </div>
 
             <div class="video_list">
+                
+                <div class="search-container" style="padding: 40px; width: 100%;">
+                    <input type="text" id="searchInput" placeholder="Search videos..." style="border-radius:15px;">
+                    <button onclick="searchVideos()"><i class="fas fa-search"></i></button>
+                </div>
+
                 <div class="vid active">
                     <video src="../Upload_Video/Videos/video1.mp4" muted></video>
                     <h3 class="title">01. Robert</h3>
@@ -256,13 +262,8 @@
                     <video src="../Upload_Video/Videos/video20.mp4" muted></video>
                     <h3 class="title">20. Violence</h3>
                 </div>
+                
             </div>
-
-               <!-- Search container -->
-     <div class="search-container" style="padding: 40px;">
-        <input type="text" id="searchInput" placeholder="Search videos...">
-        <button onclick="searchVideos()"><i class="fas fa-search"></i></button>
-    </div>
 
             <button id="button1" onclick="openFileExplorer()" style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: bold;">Upload Video</button>
                     <div class="info" id="info">
@@ -276,8 +277,7 @@
                         <button id="displayVideoButton" onclick="displayVideo()" style="display:none;">Display Video</button>
                         <div id="videoContainer"></div>
                     </div>
-        </div>
-        
+
     <!-- External JavaScript -->
     <script src="../Settings/darklight_mode.js"></script>
     <script src="../Home_Page/Activite_Sidebar.js"> </script>
