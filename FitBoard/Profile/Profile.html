@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
         <link rel="stylesheet" href="../cropperjs/cropper.css">
+        
     </head>
     <body onload="onload()">
 
@@ -124,11 +125,18 @@
             <!-- HTML for the modal dialog -->
             <div id="modalDialog" class="modal">
                 <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <img id="modalImage" src="#" alt="Selected Image">
-                    <button id="btnCrop">Crop</button>
+                    <div class="modal-body">
+                        <img id="selectedImage" src="#" alt="Selected Image">
+                        <div id="cropperContainer" class="cropper-inner-container">
+                            <img id="cropperImage" src="#" alt="Crop Image">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btnCrop">Crop</button>
+                        <button class="close">Close</button>
+                    </div>
                 </div>
-            </div>
+            </div>  
 
 
             <div class="profile_picture">
