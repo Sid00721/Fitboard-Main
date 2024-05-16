@@ -356,7 +356,7 @@ textarea {
     max-height: 80%;
     display: flex;
     flex-direction: column;
-    height: 500px; /* Fixed height for the modal content */
+    height: 750px; /* Fixed height for the modal content */
 }
 
 .close {
@@ -392,6 +392,7 @@ textarea {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 600px;
 }
 
 #cropperImage {
