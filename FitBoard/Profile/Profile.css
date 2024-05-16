@@ -359,20 +359,6 @@ textarea {
     height: 750px; /* Fixed height for the modal content */
 }
 
-.close {
-    color: red; /* Red color for close button */
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease; /* Add transition effect */
-}
-
-.close:hover,
-.close:focus {
-    color: darkred; /* Darker red on hover */
-    text-decoration: none;
-}
-
 .modal-body {
     display: flex;
     justify-content: space-between;
@@ -424,7 +410,7 @@ textarea {
 }
 
 #btnCrop {
-    margin-right: 10px;
+    margin-right: 20px;
     background-color: green; /* Green color for Crop button */
     color: white;
     padding: 10px 20px;
@@ -432,10 +418,14 @@ textarea {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease; /* Add transition effect */
+    font-size: 20px;
+    font-weight: bold;
+
 }
 
 #btnCrop:hover {
     background-color: darkgreen; /* Darker green on hover */
+    font-size: 22px;
 }
 
 .close {
@@ -443,6 +433,7 @@ textarea {
 }
 
 .close {
+    margin-right: 20px;
     background-color: red; /* Red color for Close button */
     cursor: pointer;
     color: white;
@@ -450,13 +441,15 @@ textarea {
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s ease; /* Add transition effect */
+    font-size: 20px;
+    font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
-    color: darkred; /* Darker red on hover */
+.close:hover{
+    background-color: darkred; /* Darker red on hover */
+    color: white;
+    font-size: 22px;
 }
-
 
 
 /* Styling for the circular crop area */
