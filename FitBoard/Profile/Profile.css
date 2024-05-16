@@ -443,17 +443,18 @@ textarea {
 }
 
 .close {
-    color: red; /* Red color for Close button */
-    font-size: 20px;
-    font-weight: bold;
+    background-color: red; /* Red color for Close button */
     cursor: pointer;
-    transition: color 0.3s ease; /* Add transition effect */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Add transition effect */
 }
 
 .close:hover,
 .close:focus {
     color: darkred; /* Darker red on hover */
-    text-decoration: none;
 }
 
 
